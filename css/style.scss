@@ -1,0 +1,652 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/*------------------------------------------------------------------------------------------------------------------
+ Fonts
+ ------------------------------------------------------------------------------------------------------------------*/
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+// CORE VARIABLES
+// Colors
+
+$primary: #28d979 !default;
+$text-primary: #149063;
+$white: #fff;
+$black: #000;
+$grey-dark: #5c5c5c;
+$grey-lgt: #f0f0f0;
+
+.grey-dark {
+  color: $grey-dark;
+}
+
+/*------------------------------------------------------------------------------------------------------------------
+Typography
+------------------------------------------------------------------------------------------------------------------*/
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.text-regular {
+  font-weight: 400;
+}
+.text-medium {
+  font-weight: 500;
+}
+
+:root {
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+blockquote,
+figure {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.h1 {
+  font-size: 14px;
+  line-height: 1.04;
+  font-weight: 500;
+}
+
+.h2 {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.h3 {
+  font-size: 10px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.body-1 {
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.body-2 {
+  font-size: 10px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.caption-1 {
+  font-size: 8px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.caption-2 {
+  font-size: 5px;
+  line-height: 1.42;
+  font-weight: 400;
+}
+
+a {
+  color: $white;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+@mixin respond-tablet {
+  @media (min-width: 595px) {
+    @content;
+  }
+}
+
+@mixin respond-to-mobile {
+  @media (max-width: 595px) {
+    @content;
+  }
+}
+
+ul {
+  list-style: disc inside;
+  padding-left: 0;
+  margin: 0;
+
+  @include respond-to-mobile {
+    padding-left: 1em;
+  }
+}
+
+body {
+  background: $white;
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.bentoFlexbox {
+  display: flex;
+  width: 100%;
+  min-height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 20px;
+
+  @include respond-tablet {
+    width: 555px;
+  }
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+  @include respond-to-mobile {
+    flex-direction: column;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+section {
+  padding: 12px;
+  border-radius: 12px;
+  background-color: $grey-lgt;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.personRow {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.profileImg {
+  width: 100%;
+  padding: 0 !important;
+
+  @include respond-tablet {
+    width: 124px;
+    height: 124px;
+  }
+}
+
+.nameBox {
+  width: 100%;
+  justify-content: space-between;
+
+  .yourInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  @include respond-tablet {
+    width: 124px;
+    height: 124px;
+  }
+}
+
+.languagesBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .levelLanguage {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .legend {
+      width: 58px;
+      flex-shrink: 0;
+      line-height: 1.04;
+    }
+
+    .progressBar {
+      flex: 1;
+      height: 11px;
+      border-radius: 3px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progressFill {
+      height: 100%;
+      background: $primary;
+      border-radius: 3px;
+      display: block;
+      transition: width 0.3s ease;
+    }
+
+    .fill-100 {
+      width: 100%;
+    }
+    .fill-76 {
+      width: 76%;
+    }
+    .fill-50 {
+      width: 50%;
+    }
+    .fill-25 {
+      width: 25%;
+    }
+
+    @include respond-tablet {
+      .progressBar {
+        max-width: 167px;
+      }
+    }
+  }
+
+  @include respond-tablet {
+    width: 267px;
+  }
+}
+
+.experienceBox {
+  width: 100%;
+
+  @include respond-tablet {
+    width: 411px;
+  }
+}
+
+.toolsBox {
+  width: 100%;
+
+  @include respond-tablet {
+    width: 124px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .toolSet {
+    padding: 16px 4px;
+    background: $white;
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 16px 16px;
+    justify-content: center;
+    position: relative;
+
+    @include respond-to-mobile {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    .title {
+      padding: 2px 6px;
+      border-radius: 59px;
+      background: $black;
+      color: $white;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      display: inline-block;
+      white-space: nowrap;
+    }
+  }
+}
+
+.educationBox {
+  width: 100%;
+
+  @include respond-tablet {
+    width: 268px;
+  }
+}
+
+.interestsBox {
+  width: 100%;
+
+  @include respond-tablet {
+    width: 268px;
+  }
+}
+
+.contact {
+  width: 100%;
+  background: $black;
+  color: $white;
+
+  @include respond-tablet {
+    width: 268px;
+  }
+}
+
+.btn-download {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  text-align: center;
+  width: 100%;
+  padding: 8px 12px;
+  background: $black;
+  border-radius: 8px;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten($black, 10%);
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.jobList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.job {
+  padding: 8px;
+  border-radius: 12px;
+  margin-top: var(--space-sm);
+  background: $white;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .tag {
+      width: 61px;
+      border-radius: 59px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      background: #7e731266;
+      color: #ddf163;
+      text-align: center;
+      visibility: hidden;
+    }
+  }
+
+  .content {
+    display: flex;
+    gap: 16px;
+    flex: 1;
+
+    @include respond-tablet {
+      justify-content: space-between;
+    }
+
+    @include respond-to-mobile {
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .jobInfo {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      gap: -2;
+
+      .tag {
+        color: $grey-dark;
+      }
+
+      @include respond-tablet {
+        width: 124px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 6px;
+        color: #3f3d3d;
+        position: relative;
+        top: -2px;
+      }
+    }
+
+    .featuredPoints {
+      flex: 1;
+    }
+  }
+}
+
+.job.primary {
+  background: $primary;
+  color: $white;
+
+  .topBar .tag {
+    visibility: visible;
+  }
+  .jobInfo .tag {
+    color: #ebf9f2;
+  }
+
+  ul {
+    color: $white;
+    .tag {
+      color: #f6ed1e;
+    }
+  }
+}
+
+//Education
+.educationBox .content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.education {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+  background: $white;
+  border-radius: 10px;
+  flex-shrink: 0;
+
+  @include respond-tablet {
+    width: 115px;
+  }
+
+  .topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .icon {
+      width: 12px;
+      height: 12px;
+
+      visibility: hidden;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+      color: $text-primary;
+      position: relative;
+      top: -2px;
+    }
+  }
+}
+
+.education.primary {
+  background: $primary;
+  color: $white;
+
+  .tags {
+    color: #ebf9f2;
+  }
+
+  .icon {
+    visibility: visible;
+  }
+}
+
+.interestsBox {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .content {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      li {
+        padding: 4px 10px;
+        background: $white;
+        border-radius: 40px;
+      }
+    }
+  }
+}
+
+.ripple-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
