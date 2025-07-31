@@ -650,3 +650,13 @@ section {
     opacity: 0;
   }
 }
+
+
+.edited {
+  animation: edited-flash 0.5s ease-in-out;
+}
+
+@keyframes edited-flash {
+  0% { background-color: #c6ffe0; }
+  100% { background-color: transparent; }
+}
